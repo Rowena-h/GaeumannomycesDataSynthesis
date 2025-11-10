@@ -25,6 +25,5 @@
 logs
 #ignore plots
 *.tiff
-*.png
 *.pdf
 *.svg
