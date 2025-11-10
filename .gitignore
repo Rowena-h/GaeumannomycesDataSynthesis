@@ -1,0 +1,30 @@
+#ignore script log files
+*.sh.*
+*.log
+#ignore data files
+*.faa*
+*.fa
+*.fas
+*.fas.*
+*.fasta
+*.bam
+*.Rhistory
+*.RData
+*.raxml.bestTree
+*.raxml.bestModel
+*.raxml.bootstraps
+*.raxml.log
+*.raxml.mlTrees
+*.raxml.rba
+*.raxml.startTree
+*.raxml.bestTreeCollapsed
+*.raxml.reduced.partition
+*.raxml.reduced.phy
+*.tsv
+#ignore directories
+logs
+#ignore plots
+*.tiff
+*.png
+*.pdf
+*.svg
