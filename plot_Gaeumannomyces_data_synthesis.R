@@ -1,19 +1,19 @@
-library(rnaturalearth)
-library(sf)
-library(tidyverse)
-library(ggpubr)
-library(tgutil)
-library(treeio)
-library(ggtree)
-library(ape)
-library(caper)
-library(ggsankey)
-library(aplot)
-library(ggplotify)
-library(cowplot)
-library(ggh4x)
-library(ggrepel)
-library(ggpp)
+library(tidyverse)      #2.0.0
+library(ape)            #5.8-1
+library(ggtree)         #3.99.2
+library(aplot)          #0.2.9
+library(caper)          #1.0.3
+library(cowplot)        #1.1.3
+library(ggh4x)          #0.2.8
+library(ggplotify)      #0.1.2
+library(ggpp)           #0.5.9
+library(ggpubr)         #0.6.0
+library(ggrepel)        #0.9.5
+library(ggsankey)       #0.0.99999
+library(rnaturalearth)  #1.0.1
+library(sf)             #1.0-16
+library(tgutil)         #0.1.15
+library(treeio)         #1.29.1
 
 #Set separate legends for composite plots
 options("aplot_guides"="keep")
@@ -27,7 +27,6 @@ sh.map <- read.csv(paste0(dir, "data/sh_list.txt"), sep="\t")
 
 #Read in map data
 world.map <- ne_countries(type="map_units", returnclass="sf")
-
 
 
 ################################################################################
