@@ -22,4 +22,4 @@ Input sequence data was sourced from the [GlobalFungi](https://globalfungi.com/)
 
 ## Data visualisation
 
-All subsequent analysis and data visualisation is described in `plot_Gaeumannomyces_data_synthesis.R`, using GlobalFungi and manually compiled metadata in the `data` folder.
+All subsequent analysis and data visualisation is described in `plot_Gaeumannomyces_data_synthesis.R`, using GlobalFungi and manually compiled metadata in the `data` folder. Due to its size, `GF5_allsamples.csv` from GlobalFungi is not located in `data`, but can be downloaded directly from the [website](https://globalfungi.com/).
