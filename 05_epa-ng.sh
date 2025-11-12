@@ -17,7 +17,7 @@ mkdir -p ${out_dir}
 
 #Convert leading or trailing ?s to gaps
 awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' ${alignment_dir}/ITS_aln_checked_trimmed.fa | \
-	awk -F '[^?](.*[^?]|$)' '{s=$0; h=gsub(/./,"-",$1); t=gsub(/./,"-",$2); print $1 substr(s,h+1, length(s)-h-t) $2}' > tmp_its.fa
+	awk -F '[^?](.*[^?]|$)' '{s=$0; h=gsub(/./,"-",$1); t=gsub(/./,"-",$2); print $1 substr(s,h+1, length(s)-h-t) $2}' > tmp && mv tmp ${alignment_dir}/ITS_aln_checked_trimmed.fa
 
 source mafft-7.271
 
