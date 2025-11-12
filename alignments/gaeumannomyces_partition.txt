@@ -1,0 +1,4 @@
+GTR+G, p1_LSU_aln_checked_trimmed = 1-747
+GTR+G, p2_EF1a_aln_checked_trimmed = 748-1746/3,749-1746/3,750-1746/3
+GTR+G, p3_RPB1_aln_checked_trimmed = 1747-2699/3,1748-2699/3,1749-2699/3
+GTR+G, p4_ITS_aln_checked_trimmed = 2700-3434
