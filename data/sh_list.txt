@@ -1,0 +1,19 @@
+SH	Kingdom	Phylum	Class	Order	Family	Genus	Species	SH_id
+SH0989097.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces radicicola	9130
+SH1368596.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces setariicola	39101
+SH1368678.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces ellisiorum	46661
+SH1368623.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces avenae	24571
+SH1368591.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces nanograminis	62051
+SH1368638.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces hyphopodioides	8797
+SH0989082.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces sp.	65195
+SH0949213.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces sp.	41331
+SH1892598.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces graminicola	15253
+SH1892634.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces arxii	48761
+SH1368650.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces floridanus	65248
+SH0996494.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces graminis	76971
+SH1368626.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces glycinicola	7000
+SH0989087.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces graminis	14121
+SH1892501.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces fusiformis	55319
+SH1368601.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces californicus	26818
+SH0949209.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces caricis	39972
+SH1368691.10FU	Fungi	Ascomycota	Sordariomycetes	Magnaporthales	Magnaporthaceae	Gaeumannomyces	Gaeumannomyces oryzicola	24205

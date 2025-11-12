@@ -1,0 +1,57 @@
+species,host,common.name,taxonomy,group,lifestyle
+G. amomi,Alpinia malaccensis,Malacca ginger,Zingiberales,Wild,non-pathogen
+G. amomi,Amomum siamense,Wild ginger,Zingiberales,Wild,non-pathogen
+G. arxii,Pennisetum clandestinum,Kikuyu grass,Poaceae,Wild,unspecified
+G. arxii,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,unspecified
+G. australiensis,Triticum aestivum,Wheat,Poaceae,Crop,unspecified
+G. avenae,Agrostis capillaris,Common bent grass,Poaceae,Wild,unspecified
+G. avenae,Avena sativa,Oat,Poaceae,Crop,pathogen
+G. avenae,Triticum aestivum,Wheat,Poaceae,Crop,pathogen
+G. californicus,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,unspecified
+G. ellisiorum,Deschampsia caespitosa,Tufted hairgrass,Poaceae,Wild,unspecified
+G. floridanus,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,unspecified
+G. fusiformis,Oryza sativa,Rice,Poaceae,Crop,unspecified
+G. glycinicola,Glycine max,Soybean,Fabaceae,Crop,non-pathogen
+G. glycinicola,Triticum aestivum,Wheat,Poaceae,Crop,pathogen
+G. graminicola,Ctenanthe sp.,Ctenanthe,Zingiberales,Wild,unspecified
+G. graminicola,Cynodon dactylon × C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
+G. graminicola,Eremochloa ophiuroides,Centipede grass,Poaceae,Wild,unspecified
+G. graminicola,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,unspecified
+G. graminicola,Vetiveria zizanioides,Vetiver grass,Poaceae,Wild,pathogen
+G. graminis,Cynodon dactylon × C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
+G. hyphopodioides,Ammopiptanthus mongolicus,Ammopiptanthus mongolicus,Fabaceae,Wild,non-pathogen
+G. hyphopodioides,Triticale,Triticale,Poaceae,Crop,non-pathogen
+G. hyphopodioides,Secale cereale,Rye,Poaceae,Crop,non-pathogen
+G. hyphopodioides,Avena sativa,Oat,Poaceae,Crop,non-pathogen
+G. hyphopodioides,Hordeum vulgare,Barley,Poaceae,Crop,non-pathogen
+G. hyphopodioides,Pennisetum clandestinum,Kikuyu grass,Poaceae,Wild,unspecified
+G. hyphopodioides,Triticum aestivum,Wheat,Poaceae,Crop,non-pathogen
+G. hyphopodioides,Zea mays,Maize,Poaceae,Crop,unspecified
+G. nanograminis,Cynodon dactylon × C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
+G. oryzicola,Oryza sativa,Rice,Poaceae,Crop,unspecified
+G. oryzinus,Oryza sativa,Rice,Poaceae,Crop,pathogen
+G. radicicola,Astragalus adsurgens,Prairie milkvetch,Fabaceae,Wild,non-pathogen
+G. radicicola,Zea mays,Maize,Poaceae,Crop,pathogen
+G. setariicola,Hordeum vulgare,Barley,Poaceae,Crop,unspecified
+G. setariicola,Setaria italica,Foxtail millet,Poaceae,Wild,unspecified
+G. tritici,Agropyron sp.,Wheatgrass,Poaceae,Wild,unspecified
+G. tritici,Bromus spp.,Brome grass,Poaceae,Wild,pathogen
+G. tritici,Elymus repens,Couch grass,Poaceae,Wild,pathogen
+G. tritici,Hordeum vulgare,Barley,Poaceae,Crop,pathogen
+G. tritici,Secale cereale,Rye,Poaceae,Crop,pathogen
+G. tritici,Triticale,Triticale,Poaceae,Crop,pathogen
+G. tritici,Triticum aestivum,Wheat,Poaceae,Crop,pathogen
+G. tritici,Alopecurus myosuroides,Blackgrass,Poaceae,Wild,pathogen
+G. tritici,Pennisetum clandestinum,Kikuyu grass,Poaceae,Wild,pathogen
+G. tritici,Eleusine indica,Goosegrass,Poaceae,Wild,pathogen
+G. tritici,Lolium spp.,Ryegrass,Poaceae,Wild,pathogen
+G. tritici,Echinochloa crus-galli,Cockspur,Poaceae,Wild,pathogen
+G. tritici,Poa annua,Annual meadow grass,Poaceae,Wild,pathogen
+G. tritici,Phleum pratense,Timothy,Poaceae,Wild,pathogen
+G. tritici,Phalaris spp.,Canary grass,Poaceae,Wild,pathogen
+G. tritici,Setaria pumila,Yellow foxtail,Poaceae,Wild,pathogen
+G. tritici,Festuca rubra,Red fescue,Poaceae,Wild,pathogen
+G. tritici,Dactylis glomerata,Cocksfoot grass,Poaceae,Wild,pathogen
+G. tritici,Holcus lanatus,Yorkshire fog,Poaceae,Wild,pathogen
+G. walkeri,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,unspecified
+G. wongoonoo,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,pathogen
