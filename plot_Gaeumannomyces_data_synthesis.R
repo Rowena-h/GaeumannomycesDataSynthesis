@@ -143,7 +143,7 @@ metadata <- metadata %>%
          new.label=paste0('paste(', new.label, ')'))
 
 #Read in EPA placement results
-jplace <- read.jplace(paste0(dir, "epang/both_its/epa_result.jplace"))
+jplace <- read.jplace(paste0(dir, "epang/its/epa_result.jplace"))
 #Extract tree
 tree <- jplace@phylo
 
@@ -516,7 +516,7 @@ gg.tree.its.2 <- gg.tree.its +
 
 ## ITS1 ##
 
-tree.its1 <- read.tree("W:/GaeumannomycesMetaanalysis/raxmlng/gaeumannomyces_ITS1.raxml.support")
+tree.its1 <- read.tree(pasteo(dir, "raxmlng/gaeumannomyces_ITS1.raxml.support"))
 tree.its1 <- root(tree.its1, outgroup=outgroups)
 
 #Plot base tree
@@ -586,7 +586,7 @@ gg.tree.its1.2 <- gg.tree.its1 +
 
 ## ITS2 ##
 
-tree.its2 <- read.tree("W:/GaeumannomycesMetaanalysis/raxmlng/gaeumannomyces_ITS2.raxml.support")
+tree.its2 <- read.tree(pasteo(dir, "raxmlng/gaeumannomyces_ITS2.raxml.support"))
 tree.its2 <- root(tree.its2, outgroup=outgroups)
 
 #Truncate excessively long branch
@@ -1651,16 +1651,16 @@ gg.cont.tree
 
 #Combine hosts and continents
 gg.host.cont <- gg.host.grid %>%
-  insert_left(gg.summary.hosts, width=0.4) %>%
+  insert_left(gg.summary.hosts, width=0.35) %>%
   insert_right(gg.cont + 
                  scale_size_continuous(breaks=c(0.07, 0.7, 7),
                                        range=c(0.07, 7),
                                        name="Percentage of GlobalFungi\nsamples") +
-                 theme(legend.position=c(0.5, -0.2)), width=0.42)
+                 theme(legend.position=c(0.5, -0.2)), width=0.3)
 
-ggpreview(gg.host.cont, height=4, width=7)
+ggpreview(gg.host.cont, height=4, width=7.5)
 
-#tiff(paste0(dir, "hosts-cont-", Sys.Date(), ".tiff"), width=6.5, height=4, units="in", res=600, compression="lzw")
+#png(paste0(dir, "hosts-cont-", Sys.Date(), ".png"), width=7.5, height=4, units="in", res=600)
 gg.host.cont
 #dev.off()
 
