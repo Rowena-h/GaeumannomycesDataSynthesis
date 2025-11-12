@@ -9,13 +9,13 @@
 
 out_dir=alignments
 
-source mafft-7.271
+#Concatenate
+python ~/scripts/AMAS.py concat -f fasta \
+				-d dna \
+				-i $(find ${out_dir} -maxdepth 1 -name '*_aln_checked_trimmed.fa' ! -name '*genetree*') \
+				-p ${out_dir}/gaeumannomyces_partition.txt \
+				-t ${out_dir}/gaeumannomyces_concat.fa \
+				-u fasta
 
-#Align each gene
-for marker in $(cat markers)
-do
-
-	#Create alignment
-	mafft ${out_dir}/${marker}.fasta > ${out_dir}/${marker}_aln.fasta
-
-done
+#Add gene models
+sed -i 's/^/GTR+G, /' ${out_dir}/gaeumannomyces_partition.txt
