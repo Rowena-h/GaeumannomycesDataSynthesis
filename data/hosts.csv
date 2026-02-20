@@ -14,11 +14,11 @@ G. fusiformis,Oryza sativa,Rice,Poaceae,Crop,unspecified
 G. glycinicola,Glycine max,Soybean,Fabaceae,Crop,non-pathogen
 G. glycinicola,Triticum aestivum,Wheat,Poaceae,Crop,pathogen
 G. graminicola,Ctenanthe sp.,Ctenanthe,Zingiberales,Wild,unspecified
-G. graminicola,Cynodon dactylon × C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
+G. graminicola,Cynodon dactylon x C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
 G. graminicola,Eremochloa ophiuroides,Centipede grass,Poaceae,Wild,unspecified
 G. graminicola,Stenotaphrum secundatum,Buffalo grass,Poaceae,Wild,unspecified
 G. graminicola,Vetiveria zizanioides,Vetiver grass,Poaceae,Wild,pathogen
-G. graminis,Cynodon dactylon × C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
+G. graminis,Cynodon dactylon x C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
 G. hyphopodioides,Ammopiptanthus mongolicus,Ammopiptanthus mongolicus,Fabaceae,Wild,non-pathogen
 G. hyphopodioides,Triticale,Triticale,Poaceae,Crop,non-pathogen
 G. hyphopodioides,Secale cereale,Rye,Poaceae,Crop,non-pathogen
@@ -27,7 +27,7 @@ G. hyphopodioides,Hordeum vulgare,Barley,Poaceae,Crop,non-pathogen
 G. hyphopodioides,Pennisetum clandestinum,Kikuyu grass,Poaceae,Wild,unspecified
 G. hyphopodioides,Triticum aestivum,Wheat,Poaceae,Crop,non-pathogen
 G. hyphopodioides,Zea mays,Maize,Poaceae,Crop,unspecified
-G. nanograminis,Cynodon dactylon × C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
+G. nanograminis,Cynodon dactylon x C. transvaalensis,Hybrid Bermuda grass,Poaceae,Wild,pathogen
 G. oryzicola,Oryza sativa,Rice,Poaceae,Crop,unspecified
 G. oryzinus,Oryza sativa,Rice,Poaceae,Crop,pathogen
 G. radicicola,Astragalus adsurgens,Prairie milkvetch,Fabaceae,Wild,non-pathogen
