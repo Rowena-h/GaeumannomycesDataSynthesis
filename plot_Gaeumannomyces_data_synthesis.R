@@ -105,7 +105,7 @@ gg.taxonomy.sankey <- ggplot(taxonomy.df,
     )
   ),
   size=2.5, fontface="italic") +
-  scale_x_discrete(labels=c("Previous taxonomy", "Current taxonomy"),
+  scale_x_discrete(labels=c("Previous\ntaxonomy", "Current\ntaxonomy"),
                    position="top") +
   scale_fill_manual(values=c("#777777", "grey", "grey90", "#777777",
                              "grey", "grey", "grey", "grey",
@@ -362,42 +362,55 @@ seq.samples <- seq.node %>%
   left_join(samples, by="id") %>%
   mutate(MAP=MAP/1000)
 
+#Check that duplicated sequence variants have the same EPA classification
+seq.samples %>% group_by(seq.var) %>% summarise(num=n_distinct(clade)) %>% filter(num > 1)
+
+#Number of unique sequence variants
+seqs %>% summarise(n_distinct(V1))
+seqs %>% group_by(V4) %>% summarise(n_distinct(V1))
+
 #Number of samples
 seq.samples %>% group_by(region) %>% summarise(n_distinct(id))
 
 #Studies for ITS1 sequences
 seq.samples %>% filter(region == "nplace.ITS1") %>% pull(continent) %>% unique()
 
-#Proportion of sequences assigned to species
-seq.samples %>% filter(!is.na(clade)) %>% nrow() / 
-  seq.samples %>% nrow()
+#Proportion of sequence variants assigned to species
+seq.samples %>% filter(!is.na(clade)) %>% summarise(n_distinct(seq.var)) / 
+  seq.samples %>% summarise(n_distinct(seq.var))
 
-#Proportion of sequences in agreement across methods
-seq.samples %>% filter(unite.spec == clade) %>% nrow() / 
+#Proportion of sequence variants in agreement across methods
+seq.samples %>% filter(unite.spec == clade) %>% summarise(n_distinct(seq.var)) / 
   seq.samples %>% filter(paste(unite.spec, clade) != "G. graminis G. tritici",
-                         unite.spec != "Unassigned") %>% nrow()
+                         unite.spec != "Unassigned") %>% summarise(n_distinct(seq.var))
 
-#Proportion of G. graminis allocated to G. tritici
-seq.samples %>% filter(unite.spec == "G. graminis" & clade == "G. tritici") %>% nrow() / 
-  seq.samples %>% filter(unite.spec == "G. graminis") %>% nrow()
+#Proportion of G. graminis variants allocated to G. tritici
+seq.samples %>% filter(unite.spec == "G. graminis", clade == "G. tritici") %>% summarise(n_distinct(seq.var)) / 
+  seq.samples %>% filter(unite.spec == "G. graminis") %>% summarise(n_distinct(seq.var))
 
-#Proportion of G. californicus allocated to G. australiensis
-seq.samples %>% filter(unite.spec == "G. californicus" & clade == "G. australiensis") %>% nrow() / 
-  seq.samples %>% filter(unite.spec == "G. californicus") %>% nrow()
+#Proportion of G. californicus variants allocated to G. australiensis
+seq.samples %>% filter(unite.spec == "G. californicus", clade == "G. australiensis") %>% summarise(n_distinct(seq.var)) / 
+  seq.samples %>% filter(unite.spec == "G. californicus") %>% summarise(n_distinct(seq.var))
 
-#Proportion of UNITE unassigned allocated to species
-seq.samples %>% filter(unite.spec == "Unassigned" & clade != "Unassigned") %>% nrow() / 
-  seq.samples %>% filter(unite.spec == "Unassigned") %>% nrow()
+#Proportion of UNITE unassigned variants allocated to species
+seq.samples %>% filter(unite.spec == "Unassigned", !is.na(clade)) %>% summarise(n_distinct(seq.var)) / 
+  seq.samples %>% filter(unite.spec == "Unassigned") %>% summarise(n_distinct(seq.var))
+
+#Proportion of EPA internal node placements that had a species-level UNITE SH
+seq.samples %>% filter(is.na(clade), unite.spec != "Unassigned", unite.spec != "G. sp.") %>% summarise(n_distinct(seq.var)) /
+  seq.samples %>% filter(is.na(clade)) %>% summarise(n_distinct(seq.var))
 
 #Most frequently recovered species
-seq.samples %>% group_by(clade) %>% summarise(num=n()) %>% arrange(desc(num))
+seq.samples %>% group_by(clade) %>% summarise(num=n(), sv=n_distinct(seq.var)) %>% arrange(desc(num))
+seq.samples %>% group_by(clade, region) %>% summarise(num=paste(n(), ",", n_distinct(seq.var))) %>% pivot_wider(id_cols=clade, values_from=num, names_from=region)
+
 
 #Arrange for file
 seq.samples.file <- seq.samples %>%
   dplyr::select("unite.sh"=sh, unite.spec, "EPA.spec"=clade, name, seq.var, "sample_id"=id, paper, permanent_id, sample_type, latitude, longitude, continent, year_of_sampling_from, year_of_sampling_to, Biome, primers, MAT, MAP, pH, SOC, ITS_total, manipulated, abundances)
 
 #Write to file
-write.table(seq.samples.file, paste0(dir, "globalfungi_gaeumannomyces_EPA_results_", Sys.Date(), ".tsv"), sep="\t", row.names=FALSE, quote=FALSE)
+#write.table(seq.samples.file, paste0(dir, "globalfungi_gaeumannomyces_EPA_results_", Sys.Date(), ".tsv"), sep="\t", row.names=FALSE, quote=FALSE)
 
 
 ################################################################################
@@ -515,7 +528,7 @@ gg.tree.its.2 <- gg.tree.its +
 
 ## ITS1 ##
 
-tree.its1 <- read.tree(pasteo(dir, "raxmlng/gaeumannomyces_ITS1.raxml.support"))
+tree.its1 <- read.tree(paste0(dir, "raxmlng/gaeumannomyces_ITS1.raxml.support"))
 tree.its1 <- root(tree.its1, outgroup=outgroups)
 
 #Plot base tree
@@ -585,7 +598,7 @@ gg.tree.its1.2 <- gg.tree.its1 +
 
 ## ITS2 ##
 
-tree.its2 <- read.tree(pasteo(dir, "raxmlng/gaeumannomyces_ITS2.raxml.support"))
+tree.its2 <- read.tree(paste0(dir, "raxmlng/gaeumannomyces_ITS2.raxml.support"))
 tree.its2 <- root(tree.its2, outgroup=outgroups)
 
 #Truncate excessively long branch
@@ -670,22 +683,33 @@ hosts <- read.csv(paste0(dir, "data/hosts.csv"))
 
 #Format for grid
 hosts2 <- hosts %>%
-  mutate(value="Y") %>%
-  complete(species, common.name, group, taxonomy) %>%
+  mutate(value="Y",
+         label=ifelse(group == "Crop", common.name, host),
+         label=ifelse(group == "Crop",
+                      paste0('paste("', label, '")'),
+                      paste0('paste(italic("', label, '"))')),
+         label=ifelse(grepl("sp\\.", label),
+                      sub(' sp."))', '"), " sp.")', label),
+                      label),
+         label=ifelse(grepl("spp\\.", label),
+                      sub(' spp."))', '"), " spp.")', label),
+                      label)) %>%
+  complete(species, label, group, taxonomy) %>%
   mutate(lifestyle=replace_na(lifestyle, "unspecified"),
          group=paste0('paste("', group, '")'),
          taxonomy=paste0('paste(bolditalic("', taxonomy, '"))')) %>%
-  group_by(common.name, group, taxonomy) %>% 
+  group_by(label, group, taxonomy) %>% 
   filter("Y" %in% value)
 
-parse_names <- function(x) {
-  parse(text=ifelse(x %in% c("Ammopiptanthus mongolicus", "Ctenanthe"),
-                    paste0('paste(italic("', x, '"))'),
-                    paste0('paste("', x, '")')))
-}
+# #For common names 
+# parse_names <- function(x) {
+#   parse(text=ifelse(x %in% c("Ammopiptanthus mongolicus", "Ctenanthe"),
+#                     paste0('paste(italic("', x, '"))'),
+#                     paste0('paste("', x, '")')))
+# }
 
 #Plot grid
-gg.host.grid <- ggplot(hosts2, aes(y=species, x=common.name, fill=common.name, alpha=value)) +
+gg.host.grid <- ggplot(hosts2, aes(y=species, x=label, fill=common.name, alpha=value)) +
   facet_nested(~taxonomy+group, scales="free", space="free",
                nest_line=element_line(), solo_line=TRUE,
                strip=strip_nested(clip="off"),
@@ -719,7 +743,7 @@ gg.host.grid <- ggplot(hosts2, aes(y=species, x=common.name, fill=common.name, a
                              "#FFAABB", "#FFAABB", "#FFAABB",
                              "#BA8DB4", "#BA8DB4"),
                     guide="none") +
-  scale_x_discrete(labels=parse_names) +
+  scale_x_discrete(labels=function(x) parse(text=x)) +
   labs(shape="Reported lifestyle") +
   theme_void() +
   theme(legend.position=c(-0.14, -0.18),
@@ -742,12 +766,12 @@ gg.summary.hosts <- gg.summary3 +
 
 #Combine
 gg.hosts <- gg.host.grid %>% insert_left(gg.summary.hosts, width=0.4)
-ggpreview(gg.hosts, height=4, width=7)
+ggpreview(gg.hosts, height=4.3, width=7)
 
 #Write host/lifestyle grid to file
-#pdf(paste0(dir, "hosts-", Sys.Date(), ".pdf"), width=7, height=4)
+pdf(paste0(dir, "hosts-", Sys.Date(), ".pdf"), width=7, height=4.3)
 gg.hosts
-#dev.off()
+dev.off()
 
 
 ################################################################################
